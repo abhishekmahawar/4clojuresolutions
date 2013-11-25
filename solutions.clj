@@ -68,3 +68,28 @@ true
 
 ;problem 20.
 (fn [x] (first (rest (reverse x))))
+
+;problem 21.
+(fn [l n] 
+  (if (zero? n)
+    (first l)
+    (recur (rest l) (dec n))))
+
+;problem 22.
+(fn [coll]
+    (loop [c coll n 0]
+       (if (empty? c)
+          n
+          (recur (rest c) (inc n)))))
+
+;problem 23.
+(fn [col]
+  (reduce conj () col))
+
+;problem 24.
+(fn [x] 
+  (apply + (seq x)))
+
+;problem 25.
+(fn oddnum [x]
+  (filter odd? x))
