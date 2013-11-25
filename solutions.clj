@@ -63,33 +63,38 @@ true
 ;problem 18.
 '(6 7)
 
-;problem 19.
+;problem 19 - Write a function which returns the last element in a sequence.
 (fn [x] (first (reverse x)))
 
-;problem 20.
+;problem 20 - Write a function which returns the second to last element from a sequence.
 (fn [x] (first (rest (reverse x))))
 
-;problem 21.
+;problem 21 - Write a function which returns the Nth element from a sequence.
 (fn [l n] 
   (if (zero? n)
     (first l)
     (recur (rest l) (dec n))))
 
-;problem 22.
+;problem 22 - Write a function which returns the total number of elements in a sequence.
 (fn [coll]
     (loop [c coll n 0]
        (if (empty? c)
           n
           (recur (rest c) (inc n)))))
 
-;problem 23.
+;problem 23 - Write a function which reverses a sequence.
 (fn [col]
   (reduce conj () col))
 
-;problem 24.
+;problem 24 - Write a function which returns the sum of a sequence of numbers.
 (fn [x] 
   (apply + (seq x)))
 
-;problem 25.
+;problem 25 - Write a function which returns only the odd numbers from a sequence.
 (fn oddnum [x]
   (filter odd? x))
+
+;problem 26 - Write a function which returns the first X fibonacci numbers.
+
+;problem 27 - Write a function which returns true if the given sequence is a palindrome.
+;             Hint: "racecar" does not equal '(\r \a \c \e \c \a \r)
