@@ -95,6 +95,13 @@ true
   (filter odd? x))
 
 ;problem 26 - Write a function which returns the first X fibonacci numbers.
+(fn [n] 
+  (take n 
+    (map first (iterate (fn [[a b]] [b (+ a b)]) [1 1]))))
 
 ;problem 27 - Write a function which returns true if the given sequence is a palindrome.
 ;             Hint: "racecar" does not equal '(\r \a \c \e \c \a \r)
+(fn [col] 
+  (if (string? col)
+    (= col(apply str (vec (reverse col))))
+    (= col (reverse col))))
