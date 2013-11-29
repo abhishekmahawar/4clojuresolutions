@@ -105,3 +105,14 @@ true
   (if (string? col)
     (= col(apply str (vec (reverse col))))
     (= col (reverse col))))
+
+;problem 28 - Write a function which flattens a sequence.
+;              Hint: Special Restrictions - flatten
+(fn flt [col]
+  (let [f (first col) r (next col)]
+    (concat 
+     (if (sequential? f)
+       (flt f)
+       [f])
+     (when (sequential? r)
+       (flt r)))))
